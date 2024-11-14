@@ -14,7 +14,7 @@ list = ['Lat_d', 'Long_d']
 df[list] = df[list].apply(pd.to_numeric, errors='coerce')
 estados = df['NM_UF'].unique()
 estadoFiltro = st.selectbox(
-    'Qual estado selecionar?',options=["Selecione o estado"]+estados)
+    'Qual estado selecionar?', estados)
 dadosFiltrados = df[df['NM_UF'] == estadoFiltro]
 if st.checkbox('Mostrar tabela'):
   st.write(dadosFiltrados)
